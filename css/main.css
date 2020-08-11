@@ -566,7 +566,7 @@ h2 {
 }
 
 .works__carousel div svg {
-  margin-top 20px;
+  margin-top: 20px;
 }
 
 .prev {
@@ -576,7 +576,7 @@ h2 {
     border-radius: 50%;
     opacity: 0.75;
     position: absolute;
-    top: 50%;
+    top: 32%;
     left: -2%;
     display: block;
     width: 60px;
@@ -599,7 +599,7 @@ h2 {
   border-radius: 50%;
   opacity: 0.75;
   position: absolute;
-  top: 50%;
+  top: 32%;
   left: 97%; 
   display: block;
   width: 60px;
