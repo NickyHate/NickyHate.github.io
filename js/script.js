@@ -67,9 +67,9 @@ $('input[type="tel"]').click(function(){
 		$('.popup-callback').css('display', 'flex');
 	});
 
-	$('.popup-callback').click(function(e){
+	$('.close-form').click(function(e){
 			if(event.target == this){
-		$(this).hide();
+		$('.popup-callback').hide();
 	}; });
 
 	$('.find-out-more, .see-price, .order').click(function(e) {
