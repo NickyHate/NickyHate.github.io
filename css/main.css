@@ -76,6 +76,7 @@ html, body {
 
 .popup-callback__form,
 .popup-find-out-more__form {
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
   width: 40%;
@@ -83,6 +84,32 @@ html, body {
   background-color: #fbfbfb;
   border-radius: 5px;
 }
+.close-form {
+  position: absolute;
+  right: 15px;
+  top: 16px;
+  width: 23px;
+  height: 23px;
+  opacity: 0.3;
+  cursor: pointer;
+  }
+  .close-form:hover {
+  opacity: 1;
+  }
+  .close-form:before, .close-form:after {
+  position: absolute;
+  left: 12px;
+  content: ' ';
+  height: 20px;
+  width: 2px;
+  background-color: #333;
+  }
+  .close-form:before {
+  transform: rotate(45deg);
+  }
+  .close-form:after {
+  transform: rotate(-45deg);
+  }
 
 .popup-callback__form h3,
 .popup-find-out-more__form h3 {
