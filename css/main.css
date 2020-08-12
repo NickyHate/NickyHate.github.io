@@ -645,7 +645,7 @@ h2 {
 
 .price .container {
   padding: 0 110px;
-  white-space: pre-wrap;
+  white-space: pre-line;
 }
 
 .flying-elements-price {
