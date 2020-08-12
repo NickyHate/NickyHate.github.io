@@ -69,18 +69,13 @@ $('input[type="tel"]').click(function(){
 
 	$('.close-form').click(function(e){
 			if(event.target == this){
-		$('.popup-callback').hide();
+		$('.close-form').parent().parent().hide();
 	}; });
 
 	$('.find-out-more, .see-price, .order').click(function(e) {
 		e.preventDefault();
 		$('.popup-find-out-more').css('display', 'flex');
 	});
-
-	$('.popup-find-out-more').click(function(e){
-			if(event.target == this){
-		$(this).hide();
-	}; });
 
 	$('.popup-callback__submit').click(function(e){
 		e.preventDefault();
