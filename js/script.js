@@ -1,6 +1,9 @@
 $(document).ready(function () {
   $(".popup-find-out-more__form").validate({
     rules: {
+      name: {
+        required: true,
+      },
       mail: {
         required: true,
         email: true,
