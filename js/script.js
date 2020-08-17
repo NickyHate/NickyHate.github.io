@@ -1,4 +1,19 @@
 $(document).ready(function () {
+  $(".popup-find-out-more__form").validate({
+    rules: {
+      mail: {
+        required: true,
+        email: true,
+      },
+    },
+    messages: {
+      mail: "Email введён неверно",
+    },
+    submitHandler: function (form) {
+      form.submit();
+    },
+  });
+
   //masked input
   var telInp = $('input[type="tel"]');
   telInp.each(function () {
@@ -79,12 +94,12 @@ $(document).ready(function () {
   });
 
   $(".popup-callback__submit").click(function (e) {
-	e.preventDefault();
-	if( $("#callback__name").val() == "" ){
-		$("#callback__name").addClass('error');
-	} else {
-		$("#callback__name").removeClass('error');
-	}
+    e.preventDefault();
+    if ($("#callback__name").val() == "") {
+      $("#callback__name").addClass("error");
+    } else {
+      $("#callback__name").removeClass("error");
+    }
   });
 
   $(".popup-find-out-more__submit").click(function (e) {
