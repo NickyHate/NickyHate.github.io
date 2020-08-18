@@ -10,7 +10,14 @@ $(document).ready(function () {
       },
     },
     messages: {
-      mail: "Email введён неверно",
+      mail:{
+        required : "Поле 'Email' обязательно к заполнению",
+        email : "Неверный формат адреса email"
+      },
+      name: {
+        required: "Поле 'Имя' обязательно к заполнению",
+        minlenght: "Введите не менее 2 символов в поле 'Имя'"
+      }
     },
     submitHandler: function (form) {
       form.submit();
