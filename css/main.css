@@ -670,13 +670,11 @@ h2 {
   background: linear-gradient(30deg, #ff8f5a, #ff2f96);
   color: #ffffff;
   font-size: 18px;
-  padding-top: 80px;
-  padding-bottom: 85px;
+ padding: 85px 0;
 }
 
 .price .container {
   padding: 0 110px;
-  white-space: pre-line;
 }
 
 .flying-elements-price {
@@ -774,6 +772,7 @@ h2 {
 .price h3 {
   font-size: 45px;
   font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .contacts {

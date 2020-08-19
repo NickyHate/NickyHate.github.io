@@ -1,9 +1,15 @@
 $(document).ready(function () {
+  //masked input
+  var telInp = $('input[type="tel"]');
+  telInp.each(function () {
+    $(this).mask("+7 (999) 999-99-99");
+  });
+  
   $(".popup-find-out-more__form").validate({
     rules: {
       name: {
         required: true,
-        minlength : 2,
+        minlength: 2,
       },
       mail: {
         required: true,
@@ -11,13 +17,37 @@ $(document).ready(function () {
       },
     },
     messages: {
-      mail:{
-        required : "Поле 'Email' обязательно к заполнению",
-        email : "Неверный формат адреса email"
+      mail: {
+        required: "Поле 'Email' обязательно к заполнению",
+        email: "Неверный формат адреса email",
       },
       name: {
         required: "Поле 'Имя' обязательно к заполнению",
-        minlength: "Введите не менее 2 символов в поле 'Имя'"
+        minlength: "Введите не менее 2 символов в поле 'Имя'",
+      },
+    },
+    submitHandler: function (form) {
+      form.submit();
+    },
+  });
+
+  $(".popup-callback__form").validate({
+    rules: {
+      name: {
+        required: true,
+        minlength: 2,
+      },
+      tel: {
+        required: true,
+      }
+    },
+    messages: {
+      name: {
+        required: "Поле 'Имя' обязательно к заполнению",
+        minlength: "Введите не менее 2 символов в поле 'Имя'",
+      },
+      tel: {
+        required: "Номер телефона обязателен к заполнению",
       }
     },
     submitHandler: function (form) {
@@ -25,11 +55,7 @@ $(document).ready(function () {
     },
   });
 
-  //masked input
-  var telInp = $('input[type="tel"]');
-  telInp.each(function () {
-    $(this).mask("+7 (999) 999-99-99");
-  });
+  
 
   $.fn.setCursorPosition = function (pos) {
     if ($(this).get(0).setSelectionRange) {
