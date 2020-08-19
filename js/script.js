@@ -3,6 +3,7 @@ $(document).ready(function () {
     rules: {
       name: {
         required: true,
+        minlength : 2,
       },
       mail: {
         required: true,
@@ -16,7 +17,7 @@ $(document).ready(function () {
       },
       name: {
         required: "Поле 'Имя' обязательно к заполнению",
-        minlenght: "Введите не менее 2 символов в поле 'Имя'"
+        minlength: "Введите не менее 2 символов в поле 'Имя'"
       }
     },
     submitHandler: function (form) {
