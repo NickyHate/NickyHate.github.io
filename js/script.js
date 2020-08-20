@@ -2,9 +2,25 @@ $(document).ready(function () {
   //masked input
   var telInp = $('input[type="tel"]');
   telInp.each(function () {
-    $(this).mask("+7 (999) 999-99-99");
+    $(this).mask("+7 (999) 999-99-99", { autoclear: true });
   });
-  
+
+  $.fn.setCursorPosition = function (pos) {
+    if ($(this).get(0).setSelectionRange) {
+      $(this).get(0).setSelectionRange(pos, pos);
+    } else if ($(this).get(0).createTextRange) {
+      var range = $(this).get(0).createTextRange();
+      range.collapse(true);
+      range.moveEnd("character", pos);
+      range.moveStart("character", pos);
+      range.select();
+    }
+  };
+
+  $('input[type="tel"]').click(function () {
+    $(this).setCursorPosition(4); // set position number
+  });
+
   $(".popup-find-out-more__form").validate({
     rules: {
       name: {
@@ -37,40 +53,16 @@ $(document).ready(function () {
         required: true,
         minlength: 2,
       },
-      tel: {
-        required: true,
-      }
     },
     messages: {
       name: {
         required: "Поле 'Имя' обязательно к заполнению",
         minlength: "Введите не менее 2 символов в поле 'Имя'",
-      },
-      tel: {
-        required: "Номер телефона обязателен к заполнению",
-      }
+      },      
     },
     submitHandler: function (form) {
       form.submit();
     },
-  });
-
-  
-
-  $.fn.setCursorPosition = function (pos) {
-    if ($(this).get(0).setSelectionRange) {
-      $(this).get(0).setSelectionRange(pos, pos);
-    } else if ($(this).get(0).createTextRange) {
-      var range = $(this).get(0).createTextRange();
-      range.collapse(true);
-      range.moveEnd("character", pos);
-      range.moveStart("character", pos);
-      range.select();
-    }
-  };
-
-  $('input[type="tel"]').click(function () {
-    $(this).setCursorPosition(4); // set position number
   });
 
   // slick
